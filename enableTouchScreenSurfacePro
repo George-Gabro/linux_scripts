@@ -1,0 +1,8 @@
+#!/bin/bash
+
+touch_screen_device_name="IPTS Touch"
+
+device_id=$(xinput list | grep "$touch_screen_device_name" | awk -F'=' '{print $2}' | awk '{print $1}')
+
+# Disable the input device with the specified ID
+xinput enable $device_id
