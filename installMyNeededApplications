@@ -1,0 +1,32 @@
+sudo apt install snapd
+snap install sublime-text --classic
+snap install phpstorm --classic
+snap install intellij-idea-ultimate --classic
+snap install postman
+snap install whatsapp-for-linux
+snap install brave
+snap install code --classic
+snap install datagrip --classic
+snap install clion --classic
+snap install spotify
+snap install discord
+snap install android-studio --classic
+snap install docker
+
+sudo apt-get install git
+sudo apt install php php-cli php-mbstring curl php-json php-ctype php-curl php-mbstring php-xml php-zip php-tokenizer php-tokenizer libpcre3 --no-install-recommends
+sudo apt install zip unzip
+
+wget https://get.symfony.com/cli/installer -O - | bash
+sudo mv ~/.symfony5/bin/symfony /usr/local/bin/symfony
+
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+HASH="$(curl -sS https://composer.github.io/installer.sig)"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+sudo apt install neofetch
+
+sudo apt install nodejs npm
+
+sudo apt install mysql-server
