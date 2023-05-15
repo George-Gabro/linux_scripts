@@ -1,0 +1,1 @@
+~/Android/Sdk/emulator/emulator -avd Pixel_2_API_31 -netdelay none -netspeed full
