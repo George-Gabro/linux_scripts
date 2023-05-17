@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "----------------------------------------------------"
+
+temp=$(sensors | grep "Package id 0" | awk '{print $4}')
+echo "Current CPU machine temp is: $temp"
+
+memory_usage=$(free -m | awk '/Mem/{print $3}')
+echo "Current used memory: $memory_usage MB"
+
+echo "-----------------------------------------------------"
