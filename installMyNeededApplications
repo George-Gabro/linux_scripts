@@ -30,3 +30,5 @@ sudo apt install neofetch
 sudo apt install nodejs npm
 sudo apt install mysql-server
 sudo apt install python3
+sudo apt install nano
+sudo apt install vim
