@@ -1,0 +1,5 @@
+cd /lib/firmware/brcm
+
+sudo wget https://bugs.launchpad.net/ubuntu/+source/bluez/+bug/1589889/+attachment/4683974/+files/BCM-0a5c-6410.hcd
+
+sudo modprobe -r btusb && sleep 20 && sudo modprobe btusb
