@@ -34,3 +34,6 @@ sudo apt install python3
 sudo apt install nano
 sudo apt install vim
 sudo apt install tree
+
+sudo apt install openjdk-11-jre-headless
+sudo apt install openjdk-11-jdk-headless
