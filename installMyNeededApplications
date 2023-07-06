@@ -3,6 +3,7 @@ sudo snap install flutter --classic
 snap install sublime-text --classic
 snap install phpstorm --classic
 snap install intellij-idea-ultimate --classic
+snap install webstorm --classic
 snap install postman
 snap install whatsapp-for-linux
 snap install brave
