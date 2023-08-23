@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# PS: execute as super user
+
+MODULE_NAME="intel-undervolt"
+
+if lsmod | grep -q $MODULE_NAME; then
+    echo "$MODULE_NAME is already installed."
+else
+    echo "$MODULE_NAME is not installed. Installing..."
+    sudo apt-get update
+    sudo apt-get install $MODULE_NAME
+    echo "Installation of $MODULE_NAME complete."
+fi
+
+## undervolt CPU with 120mV
+sed -i "s/undervolt 0 'CPU' 0/undervolt 0 'CPU' -120/g" /etc/intel-undervolt.conf
+## undervolt GPU with 100mV
+sed -i "s/undervolt 1 'GPU' 0/undervolt 1 'GPU' -100/g" /etc/intel-undervolt.conf
+## undervolt CPU Cache with 120mV
+sed -i "s/undervolt 2 'CPU Cache' 0/undervolt 2 'CPU Cache' -120/g" /etc/intel-undervolt.conf
+
+## don't let the process goes above 60C
+sed -i '15 i\tjoffset -40' /etc/intel-undervolt.conf
+
+sudo intel-undervolt apply
