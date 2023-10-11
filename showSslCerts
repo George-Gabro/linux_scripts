@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cmd='openssl x509 -noout -subject'
+
+while read -r line; do
+    if [[ "$line" == "-----BEGIN CERTIFICATE-----" ]]; then
+        subject=$(openssl x509 -noout -subject)
+        echo "$subject"
+    fi
+done < /etc/ssl/certs/ca-certificates.crt
