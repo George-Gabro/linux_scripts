@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <length>"
+    exit 1
+fi
+
+length="$1"
+
+if ! [[ "$length" =~ ^[0-9]+$ ]]; then
+    exit 1
+fi
+
+random_bytes=$(dd if=/dev/urandom bs=1 count="$length" 2>/dev/null | base64)
+
+echo "$random_bytes"
